@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from "react";
 import FadeIn from "react-fade-in";
 import Lottie from "react-lottie";
-import ReactLoading from "react-loading";
 import "bootstrap/dist/css/bootstrap.css";
 import * as legoData from "./load.json";
 import * as doneData from "./doneloading.json";
@@ -45,12 +44,9 @@ useEffect(()=>{
             const response = await fetch("https://jsonplaceholder.typicode.com/posts");
             setLoading(response);
             setTimeout(()=>{
-                setDone(response);
-                
-                console.log(`${loading} loading `);
-            },2000);
-            
-            
+            setDone(response);
+            console.log(`${loading} loading `);
+            },2000);       
             console.log(done);
           }
              fetcheddata();
@@ -82,6 +78,7 @@ return(
             </div>
           
         )}
+        
     </div>
 );
 }
